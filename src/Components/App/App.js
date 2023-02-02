@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import MovieFinder from '../../MovieFinder.png'
-import './App.css';
+import MoldyTurnips from '../../MoldyTurnips.png'
 import MovieGrid from ".././MovieGrid/MovieGrid.js"
+import MovieBanner from '.././MovieBanner/MovieBanner.js'
+
+import './App.css';
 
 
 class App extends Component {
@@ -56,8 +58,9 @@ class App extends Component {
     return (
       <div className="App">
       <div>
-        <img src={MovieFinder} alt="Website Logo" className='logo'/>
+        <img src={MoldyTurnips} alt="Website Logo" className='logo'/>
       </div> 
+      <MovieBanner movies={this.state.movies}/>
       <MovieGrid movies={this.state.movies} />
     </div>
     )

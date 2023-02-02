@@ -1,0 +1,9 @@
+.banner-image {
+    height: 400px;
+}
+
+.title-and-rank {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

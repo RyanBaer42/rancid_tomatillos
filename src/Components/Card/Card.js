@@ -7,7 +7,7 @@ const Card = ({posterPath, title, averageRating}) => {
       <img src={posterPath} className="cardImage" />
       <p>Rating: {averageRating}</p>
       <p>{title}</p> 
-      </div>
+    </div>
   )
 }
 
