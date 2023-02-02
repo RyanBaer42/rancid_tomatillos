@@ -9,7 +9,7 @@ const MovieGrid = ({movies}) => {
       <Card 
         posterPath={card.poster_path}
         title={card.title}
-        averageRating={card.average_rating}
+        averageRating={card.average_rating.toFixed(1)}
      />   
     )
     }

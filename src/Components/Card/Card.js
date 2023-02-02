@@ -4,8 +4,8 @@ import "./Card.css"
 const Card = ({posterPath, title, averageRating}) => {
   return (
     <div className="card">
-      <img src={posterPath}/>
-      <p>{averageRating}</p>
+      <img src={posterPath} className="cardImage" />
+      <p>Rating: {averageRating}</p>
       <p>{title}</p> 
       </div>
   )
