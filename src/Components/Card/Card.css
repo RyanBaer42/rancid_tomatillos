@@ -1,7 +1,6 @@
 .card {
   /* border: 3px solid black; */
   box-sizing: border-box;
-  margin-bottom: 100px;
   height: 250px;
   width: 250px;
 }
