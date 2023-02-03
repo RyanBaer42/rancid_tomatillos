@@ -1,0 +1,10 @@
+.highlighted-movie {
+    position:absolute;
+    z-index: 1;
+    bottom: 250px;
+    right: 0;
+}
+
+.highlight-image {
+    height: 200px;
+}

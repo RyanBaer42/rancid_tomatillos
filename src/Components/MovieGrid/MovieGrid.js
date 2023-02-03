@@ -2,7 +2,7 @@ import React from "react";
 import "./MovieGrid.css"
 import Card from "../Card/Card.js"
 
-const MovieGrid = ({movies}) => {
+const MovieGrid = ({movies, handleClick}) => {
 
   const cards = movies.map(card => {
     return (
@@ -12,6 +12,7 @@ const MovieGrid = ({movies}) => {
         posterPath={card.poster_path}
         title={card.title}
         averageRating={card.average_rating.toFixed(1)}
+        handleClick={handleClick}
      />   
     )
     }
