@@ -11,4 +11,5 @@ const Card = ({posterPath, title, averageRating}) => {
   )
 }
 
+
 export default Card

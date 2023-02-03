@@ -7,6 +7,8 @@ const MovieGrid = ({movies}) => {
   const cards = movies.map(card => {
     return (
       <Card 
+        key={card.id}
+        id={card.id}
         posterPath={card.poster_path}
         title={card.title}
         averageRating={card.average_rating.toFixed(1)}
