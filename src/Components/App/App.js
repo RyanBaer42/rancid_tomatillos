@@ -3,6 +3,7 @@ import MoldyTurnips from "../../MoldyTurnips.png";
 import MovieGrid from ".././MovieGrid/MovieGrid.js";
 import MovieBanner from ".././MovieBanner/MovieBanner.js";
 import Highlight from "../HighlightedMovie/Highlight.js";
+import { fetchAllMovies, fetchSingleMovie } from "../../ApiCalls"
 
 import "./App.css";
 
@@ -18,13 +19,7 @@ class App extends Component {
 
 
   fetchMovie(id) {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw Promise.reject(response);
-      })
+    fetchSingleMovie(id)
       .then((result) => {
         this.setState({ singleMovie: result.movie, isLoading: false });
       })
@@ -43,13 +38,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw Promise.reject(response);
-      })
+    fetchAllMovies()
       .then((result) => {
         this.setState({ movies: result.movies, isLoading: false });
       })
