@@ -9,10 +9,7 @@ const MovieBanner = ({movies}) => {
     if(movies) {
     return (
         <div className="movie-banner"> 
-            <div className="title-and-rank">
-                <p>{random.title}</p>
-                <p>Average Rating {random.average_rating.toFixed(1)}</p>   
-            </div>
+                <img className="banner-poster" alt={random.title} src={random.poster_path}/>
                 <img className="banner-image" alt={random.title} src={random.backdrop_path}/>
         </div>
     )

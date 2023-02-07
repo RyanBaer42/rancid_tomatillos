@@ -1,9 +1,16 @@
-.banner-image {
-    height: 400px;
+.banner-poster {
+    width: 250px;
+    margin-right: -275px;
+    margin-bottom: 13px;
+    position: relative;
+    z-index: 2;
 }
 
-.title-and-rank {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.banner-image {
+    height: 400px;
+    opacity: .3;
+    border-radius: 10px;
 }
+
+
+

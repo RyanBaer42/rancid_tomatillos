@@ -6,7 +6,7 @@ const Card = ({posterPath, title, averageRating, handleClick, id}) => {
     <div className="card" onClick={() => handleClick(id)}>
       <img src={posterPath} alt={title} className="cardImage" />
       <div className="card-info">
-        <p>Rating: {averageRating}</p>
+        <p>⭐ {averageRating}</p>
         <p>{title}</p>
       </div>
     </div>
