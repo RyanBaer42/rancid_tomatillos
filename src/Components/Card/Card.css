@@ -3,7 +3,7 @@
   box-sizing: border-box;
   height: 240px;
   width: 120px;
-  background-color: #353935;
+  background-color: black;
   border-radius: 5px;
 }
 .card:hover {
@@ -17,7 +17,7 @@
 p {
   font-size: small;
   color: azure;
-  margin-top: 5px;
+  margin-top: 1px;
   margin-bottom: 0px;
 }
 .card-info {
