@@ -53,7 +53,7 @@ class App extends Component {
           <div>
             <img src={MoldyTurnips} alt="Website Logo" className="logo" />
           </div>
-          <Route exact path="/" render={() => <MovieBanner movies={this.state.movies} />  } />
+          <Route exact path="/" render={() => <MovieBanner movies={this.state.movies} handleClick={this.handleClick}/> } />
           <Route exact path="/" render={() => <MovieGrid movies={this.state.movies} handleClick={this.handleClick} /> } />
           <Route exact path='/movies/:movieId' render={({ match }) => {return ( <Highlight handleReturn={this.handleReturn} singleMovie={this.state.singleMovie}/> )}} /> 
         </main>
