@@ -4,6 +4,7 @@ import MovieGrid from ".././MovieGrid/MovieGrid.js";
 import MovieBanner from ".././MovieBanner/MovieBanner.js";
 import Highlight from "../HighlightedMovie/Highlight.js";
 import { fetchAllMovies, fetchSingleMovie } from "../../ApiCalls"
+import { Route, NavLink } from 'react-router-dom'
 
 import "./App.css";
 
@@ -16,7 +17,6 @@ class App extends Component {
       isLoading: true,
     };
   }
-
 
   fetchMovie(id) {
     fetchSingleMovie(id)
@@ -33,9 +33,7 @@ class App extends Component {
   }
 
   handleReturn = () => {
-    this.setState({singleMovie: ''})
   }
-
 
   componentDidMount() {
     fetchAllMovies()
@@ -46,24 +44,19 @@ class App extends Component {
         this.setState({ error: "Somethin aint workin" });
       });
   }
-
   
   render() {
     console.log(this.state.singleMovie)
     if (!this.state.isLoading) {
       return (
-        <div className="App">
+        <main className="App">
           <div>
             <img src={MoldyTurnips} alt="Website Logo" className="logo" />
           </div>
-          {this.state.movies && !this.state.singleMovie &&
-          <MovieBanner movies={this.state.movies} /> 
-          } 
-          {this.state.movies && !this.state.singleMovie &&
-          <MovieGrid movies={this.state.movies} handleClick={this.handleClick} />
-          }
-          {this.state.singleMovie && <Highlight handleReturn={this.handleReturn} singleMovie={this.state.singleMovie} />}
-        </div>
+          <Route exact path="/" render={() => <MovieBanner movies={this.state.movies} />  } />
+          <Route exact path="/" render={() => <MovieGrid movies={this.state.movies} handleClick={this.handleClick} /> } />
+          <Route exact path='/movies/:movieId' render={({ match }) => {return ( <Highlight handleReturn={this.handleReturn} singleMovie={this.state.singleMovie}/> )}} /> 
+        </main>
       );
     } else {
       <div className="App">

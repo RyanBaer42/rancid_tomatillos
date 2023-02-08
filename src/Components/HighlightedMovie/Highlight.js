@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Highlight.css"
 
 // //position absolute 00
 
-const Highlight = ({singleMovie, handleReturn}) => {
+const Highlight = ({singleMovie, handleReturn, movieId}) => {
     return (
         <div className="highlighted-movie">
             <div>
@@ -12,7 +13,9 @@ const Highlight = ({singleMovie, handleReturn}) => {
             </div>
             <img className="highlight-image" alt={singleMovie.title}src={singleMovie.poster_path}/>
             <p className="highlight-overview">{singleMovie.overview}</p>
-            <button onClick={() => handleReturn()}>Return to Movies</button>
+            <NavLink to={'/'}>
+              <button onClick={() => handleReturn()}>Return to Movies</button>
+            </NavLink>
         </div>
     )
 }
