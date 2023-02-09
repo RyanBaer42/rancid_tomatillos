@@ -20,6 +20,7 @@ p {
   color: azure;
   margin-top: 1px;
   margin-bottom: 0px;
+  text-decoration: none;
 }
 .card-info {
   display: flex;

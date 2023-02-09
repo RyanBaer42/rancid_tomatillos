@@ -5,7 +5,7 @@ import "./Card.css"
 const Card = ({posterPath, title, averageRating, handleClick, id}) => {
   return (
     <NavLink to={`/movies/${id}`}>
-      <div className="card" onClick={() => handleClick(id)}>
+      <div id={id} className="card" onClick={() => handleClick(id)}>
         <img src={posterPath} alt={title} className="cardImage" />
         <div className="card-info">
           <p>⭐ {averageRating}</p>
