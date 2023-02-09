@@ -1,18 +1,19 @@
 
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Card.css"
-const Card = ({posterPath, title, averageRating, handleClick, id}) => {
+
+const Card = ({posterPath, title, averageRating, displayOneMovie, id}) => {
   return (
-    <NavLink to={`/movies/${id}`}>
-      <div id={id} className="card" onClick={() => handleClick(id)}>
+    <Link to={`/movies/${id}`} style={{ textDecoration: 'none' }}>
+      <div id={id} className="card" onClick={() => displayOneMovie(id)}>
         <img src={posterPath} alt={title} className="cardImage" />
         <div className="card-info">
           <p>⭐ {averageRating}</p>
           <p>{title}</p>
         </div>
       </div>
-    </NavLink>
+    </Link>
   )
 }
 export default Card
