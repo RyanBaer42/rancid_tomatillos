@@ -4,7 +4,7 @@ import MovieGrid from ".././MovieGrid/MovieGrid.js";
 import MovieBanner from ".././MovieBanner/MovieBanner.js";
 import Highlight from "../HighlightedMovie/Highlight.js";
 import fetchData from "../../ApiCalls"
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import "./App.css";
 
@@ -13,48 +13,9 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      singleMovie: '',
       isLoading: true,
-      singleMovieId: null
     };
   }
-
-  // fetchMovie(id) {
-  //   fetchSingleMovie(id)
-  //     .then((result) => {
-  //       this.setState({ singleMovie: result.movie, isLoading: false });
-  //     })
-  //     .catch((response) => {
-  //       this.setState({ error: "Somethin aint workin" });
-  //     });
-  // }
-
-  // handleClick = id => {
-  //   this.fetchMovie(id)
-  // }
-
-  displayOneMovie = id => {
-    this.setState({ singleMovieId: id });
-  };
-
-  updateSelectedMovie = movie => {
-    this.setState({ singleMovie: movie });
-  };
-
-  // handleReturn = () => {
-  // }
-
-  // componentDidMount() {
-  //   if(this.state.singleMovie === '') {
-  //     fetchAllMovies()
-  //     .then((result) => {
-  //       this.setState({ movies: result.movies, isLoading: false });
-  //     })
-  //     .catch((response) => {
-  //       this.setState({ error: "Somethin aint workin" });
-  //     });
-  //   }
-  // }
 
   componentDidMount() {
     fetchData()
@@ -86,7 +47,12 @@ class App extends Component {
           </div>
           <Route exact path="/" render={() => <MovieBanner movies={this.state.movies} displayOneMovie={this.displayOneMovie}/> } />
           <Route exact path="/" render={() => <MovieGrid movies={this.state.movies} displayOneMovie={this.displayOneMovie} /> } />
-          <Route exact path='/movies/:movieId' render={({ match }) => {return ( <Highlight singleMovieId={this.state.singleMovieId} singleMovie={this.state.singleMovie}/> )}} /> 
+          <Route exact path='/movies/:movieId' render={({ match }) => {
+            const doesMovieExist = this.state.movies.find(movie => {
+              return movie.id === parseInt(match.params.movieId)
+            })
+            if (!!doesMovieExist){
+              return ( <Highlight singleMovieId={match.params.movieId} /> )}}}/>   
         </main>
       );
     } else {

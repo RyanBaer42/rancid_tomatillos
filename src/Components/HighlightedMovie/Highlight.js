@@ -7,15 +7,16 @@ import fetchData from "../../ApiCalls";
 class Highlight extends Component { 
   constructor () {
     super()
-    this.state = {}
+    this.state = {
+      singleMovie:{}
+    }
   }
 
   componentDidMount() {
     const { singleMovieId } = this.props;
     fetchData(singleMovieId)
       .then(data => {
-        this.props.updateSelectedMovie(data.movie);
-        console.log('DATA.MOVIE', data.movie)
+        this.setState({singleMovie:data.movie})
       })
       .catch(error => {
         if (
@@ -32,16 +33,15 @@ class Highlight extends Component {
       });
   }
 
-  render() {
-    const { singleMovie } = this.props.singleMovie; 
+  render() { 
     return (
       <div className="highlighted-movie">
           <div>
-              <h1>{singleMovie.title}</h1>
-              <h1>Average Rating: {singleMovie.average_rating}</h1>
+              <h1>{this.state.singleMovie.title}</h1>
+              <h1>Average Rating: {this.state.singleMovie.average_rating}</h1>
           </div>
-          <img className="highlight-image" alt={singleMovie.title}src={singleMovie.poster_path}/>
-          <p className="highlight-overview">{singleMovie.overview}</p>
+          <img className="highlight-image" alt={this.state.singleMovie.title}src={this.state.singleMovie.poster_path}/>
+          <p className="highlight-overview">{this.state.singleMovie.overview}</p>
           <NavLink to={'/'}>
             <button>Return to Movies</button>
           </NavLink>
