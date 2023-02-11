@@ -8,7 +8,8 @@ class Highlight extends Component {
   constructor () {
     super()
     this.state = {
-      singleMovie:{}
+      singleMovie:{},
+      error: ''
     }
   }
 
@@ -34,19 +35,27 @@ class Highlight extends Component {
   }
 
   render() { 
-    return (
-      <div className="highlighted-movie">
-          <div>
-              <h1>{this.state.singleMovie.title}</h1>
-              <h1>Average Rating: {this.state.singleMovie.average_rating}</h1>
-          </div>
-          <img className="highlight-image" alt={this.state.singleMovie.title}src={this.state.singleMovie.poster_path}/>
-          <p className="highlight-overview">{this.state.singleMovie.overview}</p>
-          <NavLink to={'/'}>
-            <button>Return to Movies</button>
-          </NavLink>
-      </div>
-  )}
+    if (this.state.error === ''){
+      let movie = this.state.singleMovie
+      return (
+        <div className="highlighted-movie">
+            <div>
+                <h1>{movie.title}</h1>
+                <h1>Average Rating: {movie.average_rating}</h1>
+            </div>
+            <img className="highlight-image" alt={movie.title}src={movie.poster_path}/>
+            <p className="highlight-overview">{movie.overview}</p>
+            <NavLink to={'/'}>
+              <button>Return to Movies</button>
+            </NavLink>
+        </div>
+      )
+    } else {
+      return (
+        <h1>{this.state.error} Destination not found</h1>
+      )
+    }
+  }
 }
 
 

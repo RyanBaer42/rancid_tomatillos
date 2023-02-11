@@ -14,7 +14,6 @@ const fetchData = (movieId) => {
         } else if (response.status === 404) {
           throw new Error('404')
         } else {
-          console.log(response);
           throw new Error(`An error occurred: status ${response.status}`);
         }
       })

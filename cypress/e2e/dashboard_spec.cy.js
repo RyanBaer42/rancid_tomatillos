@@ -2,9 +2,9 @@ import { click } from "@testing-library/user-event/dist/click";
 
 describe('Dashboard', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/');
+    cy.visit('/');
   });
-  it('Have access to the Moldy Turnips website', () => {
+  it('should have access to the Moldy Turnips website', () => {
     cy.visit('http://localhost:3000/')
   })
   it("should show the Moldy Turnips logo when the page is loaded", () => {
