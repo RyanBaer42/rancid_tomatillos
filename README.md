@@ -31,7 +31,7 @@ Ryan and Craig worked on this project for 13 days. We are both in our 3rd week i
 
 ### Contributors:
 - [Ryan Baer (he/him)](https://www.linkedin.com/in/ryan-baer-33311114a/)
-- [Craig Weller (he/him) (https://www.linkedin.com/in/craig-weller/)]
+- [Craig Weller (he/him)](https://www.linkedin.com/in/craig-weller/)
 
 
 
