@@ -12,6 +12,7 @@ const sliderConfiguration = {
 	startAt: Math.floor(Math.random() * 40),
 	type: "slider",
 	focusAt: 'center',
+	hoverpause: true,
 };
 
 
@@ -39,16 +40,18 @@ class MovieBanner extends Component {
 				)
 		})
 		return (
-			<div className="glide">
-				<div className="glide__track" data-glide-el="track">
-					<ul className="glide__slides">
-						{banners}
-					</ul>
+			<div className="glideContainer">
+				<div className="glide">
+					<div className="glide__track" data-glide-el="track">
+						<ul className="glide__slides">
+							{banners}
+						</ul>
+					</div>
+						<div className="glide__arrows" data-glide-el="controls">
+										<button className="glide__arrow glide__arrow--left" data-glide-dir="<">&#x3c;</button>
+										<button className="glide__arrow glide__arrow--right" data-glide-dir=">">&#x3e;</button>
+						</div>
 				</div>
-                <div className="glide__arrows" data-glide-el="controls">
-                        <button className="glide__arrow glide__arrow--left" data-glide-dir="<">&#x3c;</button>
-                        <button className="glide__arrow glide__arrow--right" data-glide-dir=">">&#x3e;</button>
-                </div>
 			</div>
 		)
 	}

@@ -24,14 +24,38 @@
     box-shadow: 0 5px 10px rgba(255,255,255, 0.3);
 }
 
+.glideContainer {
+    width: 80vw;
+}
+
 .glide__slide {
     display: flex;
     justify-content: center;
-    /* width: 80vw; */
 }
+/* 
+@media only screen and (max-width: 900px) {
 
-.glide__arrows {
-    display: flex;
-    justify-content: space-between;
+    .glide__arrow--left {
+        position: absolute;
+        left: 5vw;
+    }
+    
+    .glide__arrow--right {
+        position: absolute; 
+        right: 5vw;
+    }
+} */
+
+@media only screen and (min-width: 1500px) {
+
+    .glide__arrow--left {
+        position: absolute;
+        left: 20vw;
+    }
+    
+    .glide__arrow--right {
+        position: absolute; 
+        right: 20vw;
+    }
 }
 
