@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Learning Goals:
+- Gain competency with React fundamentals
+- Learn how to test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
 
-In the project directory, you can run:
+### Abstract:
+Meet the next best thing to Rotten Tomatos... Moldy Turnips!! Choose from a list of movies and select a specific movie to see more details. Navigate to and from the selected movies page using React router.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation Instructions:
+- Fork the repository found here: https://github.com/RyanBaer42/rancid_tomatillos
+- Clone down your new, forked repo. While cloning, name it what you want your local repo to be named, and run git clone.
+- cd into the repository
+- Install NPM packages by running npm install in your terminal
+- Start the server by running npm start in your repo
+- After starting the server, the project will run at http://localhost:3000/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Preview of App:
 
-### `npm test`
+https://user-images.githubusercontent.com/113728354/218590181-cf967a48-3caf-4d6a-9050-5120c9da1943.mp4
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Context:
+Ryan and Craig worked on this project for 13 days. We are both in our 3rd week in our third module in Turing. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Contributors:
+- [Ryan Baer (he/him)](https://www.linkedin.com/in/ryan-baer-33311114a/)
+- [Craig Weller (he/him) (https://www.linkedin.com/in/craig-weller/)]
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Wins + Challenges:
+Some challenges included: 
+- Successfully implemented glide.js, which can be more technically challenging than others like slider.js
+- Created a site using React and Router, the latest technologies that we've learned at Turing
+- Stuck to our original layout design despite tricky formatting issues
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Some wins included:
+- Implementing a several new forms of tech can be tedious as we had to slowly work our way through our notes and documentation, rather than relying on past experience
+- Glide.js can be difficult to work with and probably took more time than a different option would have
