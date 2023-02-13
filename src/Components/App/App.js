@@ -48,7 +48,7 @@ class App extends Component {
           <Route exact path="/" render={() => <MovieBanner movies={this.state.movies} />} />
           <Route exact path="/" render={() => <MovieGrid movies={this.state.movies} />} />
           <Route exact path='/movies/:movieId' render={({ match }) => {
-              return (<Highlight singleMovieId={match.params.movieId} />)
+              return (<Highlight singleMovieId={Number(match.params.movieId)} />)
             }
           }/>
         </main>
