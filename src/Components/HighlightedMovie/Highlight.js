@@ -52,7 +52,7 @@ class Highlight extends Component {
       )
     } else {
       return (
-        <h1>{this.state.error} Destination not found</h1>
+        <h1 className="error-message">{this.state.error} Destination not found</h1>
       )
     }
   }

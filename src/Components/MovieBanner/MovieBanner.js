@@ -9,7 +9,7 @@ import "./MovieBanner.css"
 const sliderConfiguration = {
 	autoplay: 5000,
 	perView: 1,
-	startAt: 0,
+	startAt: Math.floor(Math.random() * 40),
 	type: "slider",
 	focusAt: 'center',
 };
@@ -30,7 +30,7 @@ class MovieBanner extends Component {
 		const { movies } = this.props
 		const banners = movies.map(movie => {
 			return (
-					<NavLink className='glide__slide' to={`/movies/${movie.id}`}>
+					<NavLink key={movie.id} className='glide__slide' to={`/movies/${movie.id}`}>
 						<div className="movie-banner">
 							<img className="banner-poster" alt={movie.title} src={movie.poster_path} />
 							<img className="banner-image" alt={movie.title} src={movie.backdrop_path} />
@@ -45,6 +45,10 @@ class MovieBanner extends Component {
 						{banners}
 					</ul>
 				</div>
+                <div className="glide__arrows" data-glide-el="controls">
+                        <button className="glide__arrow glide__arrow--left" data-glide-dir="<">&#x3c;</button>
+                        <button className="glide__arrow glide__arrow--right" data-glide-dir=">">&#x3e;</button>
+                </div>
 			</div>
 		)
 	}
