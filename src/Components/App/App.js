@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {
       movies: [],
       isLoading: true,
+      error: ''
     };
   }
 
@@ -37,28 +38,29 @@ class App extends Component {
         }
       });
   }
-  
   render() {
-    if (!this.state.isLoading) {
+    if (!this.state.isLoading && !this.state.error) {
       return (
         <main className="App">
           <div>
             <img src={MoldyTurnips} alt="Website Logo" className="logo" />
           </div>
-          <Route exact path="/" render={() => <MovieBanner movies={this.state.movies} displayOneMovie={this.displayOneMovie}/> } />
-          <Route exact path="/" render={() => <MovieGrid movies={this.state.movies} displayOneMovie={this.displayOneMovie} /> } />
+          <Route exact path="/" render={() => <MovieBanner movies={this.state.movies} />} />
+          <Route exact path="/" render={() => <MovieGrid movies={this.state.movies} />} />
           <Route exact path='/movies/:movieId' render={({ match }) => {
-            const doesMovieExist = this.state.movies.find(movie => {
-              return movie.id === parseInt(match.params.movieId)
-            })
-            if (!!doesMovieExist){
-              return ( <Highlight singleMovieId={match.params.movieId} /> )}}}/>   
+              return (<Highlight singleMovieId={match.params.movieId} />)
+            }
+          }/>
         </main>
       );
+    } else if (this.state.isLoading && !this.state.error) {
+      return (
+        <div className="App">
+          <h1>Loading Movies...</h1>
+        </div>
+      )
     } else {
-      <div className="App">
-        <h1>Loading Movies</h1>
-      </div>;
+      <h1>Server is down please try again later</h1>
     }
   }
 }
