@@ -1,6 +1,6 @@
 .highlighted-movie {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     width: 1000px;
 }
@@ -10,7 +10,7 @@
 }
 
 .highlight-overview {
-    margin-top: 10px;
+    margin-top: 5vh;
     margin-bottom: 10px;
     font-size: large;
 }
@@ -19,4 +19,24 @@ h1 {
     color: aliceblue;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+button {
+    margin-top: 5vh;
+}
+
+button:hover {
+    cursor: pointer;
+}
+.error-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5vw;
+    /* align-items: center; */
 }

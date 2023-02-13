@@ -1,8 +1,9 @@
 import React from "react";
 import "./MovieGrid.css"
+import PropTypes from 'prop-types'
 import Card from "../Card/Card.js"
 
-const MovieGrid = ({movies, displayOneMovie}) => {
+const MovieGrid = ({movies}) => {
 
   const cards = movies.map(card => {
     return (
@@ -11,8 +12,7 @@ const MovieGrid = ({movies, displayOneMovie}) => {
         id={card.id}
         posterPath={card.poster_path}
         title={card.title}
-        averageRating={card.average_rating.toFixed(1)}
-        displayOneMovie={displayOneMovie}
+        averageRating={Number(card.average_rating.toFixed(1))}
      />   
     )
     }
@@ -27,3 +27,7 @@ const MovieGrid = ({movies, displayOneMovie}) => {
 }
 
 export default MovieGrid
+
+MovieGrid.propTypes = {
+  movies: PropTypes.array.isRequired
+}

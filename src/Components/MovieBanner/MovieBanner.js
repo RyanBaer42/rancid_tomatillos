@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Glide from "@glidejs/glide"
+import PropTypes from 'prop-types'
 import "../../../node_modules/@glidejs/glide/dist/css/glide.core.css"
 import "../../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
 
@@ -57,5 +58,8 @@ class MovieBanner extends Component {
 	}
 }
 
-
 export default MovieBanner
+
+MovieBanner.propTypes = {
+	movies: PropTypes.array.isRequired,
+};
